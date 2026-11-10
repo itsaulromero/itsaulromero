@@ -1,0 +1,70 @@
+{
+  "login": "itsaulromero",
+  "greeting": "Hey, I'm",
+  "name": "Saúl Romero",
+  "tagline": [
+    [{ "t": "Full-stack web developer.", "strong": true }, { "t": " I build the interface, the API behind it," }],
+    [{ "t": "the data underneath and the pipeline that ships it." }]
+  ],
+  "facts": [
+    { "label": "Now", "value": "Frontend at Alebat Education", "detail": "Remote, with a team in Spain" },
+    { "label": "Studying", "value": "Computer Systems Engineering", "detail": "TecNM Morelia, class of 2026" },
+    { "label": "Based in", "value": "Morelia, México", "detail": "UTC−6, works remotely" }
+  ],
+
+  "links": [
+    { "id": "portfolio", "label": "saulromero.dev", "href": "https://saulromero.dev", "icon": "globe", "primary": true },
+    { "id": "linkedin", "label": "LinkedIn", "href": "https://www.linkedin.com/in/sa%C3%BAl-romero-cruz-64a242236/", "icon": "linkedin" },
+    { "id": "email", "label": "contacto@saulromero.dev", "href": "mailto:contacto@saulromero.dev", "icon": "mail" },
+    { "id": "x", "label": "@itsaulromero", "href": "https://x.com/itsaulromero", "icon": "x" }
+  ],
+
+  "activityNote": "Most of it since August 2026, when I joined the frontend team at Alebat.",
+
+  "stack": {
+    "title": "My stack, in the order a request meets it",
+    "stations": [
+      {
+        "name": "Interface",
+        "note": "what people touch",
+        "items": [
+          { "name": "Vue", "icon": "vuedotjs" },
+          { "name": "Nuxt", "icon": "nuxt" },
+          { "name": "TypeScript", "icon": "typescript" },
+          { "name": "Tailwind CSS", "icon": "tailwindcss" },
+          { "name": "Pinia", "icon": "pinia" }
+        ]
+      },
+      {
+        "name": "API",
+        "note": "where the rules live",
+        "items": [
+          { "name": "Laravel", "icon": "laravel" },
+          { "name": "Livewire", "icon": "livewire" },
+          { "name": "PHP", "icon": "php" },
+          { "name": "Node.js", "icon": "nodedotjs" },
+          { "name": "Strapi", "icon": "strapi" }
+        ]
+      },
+      {
+        "name": "Data",
+        "note": "what must not get lost",
+        "items": [
+          { "name": "PostgreSQL", "icon": "postgresql" },
+          { "name": "MySQL", "icon": "mysql" },
+          { "name": "Supabase", "icon": "supabase" }
+        ]
+      },
+      {
+        "name": "Ship",
+        "note": "how it reaches production",
+        "items": [
+          { "name": "AWS S3 + CloudFront", "icon": "cloud" },
+          { "name": "GitHub Actions", "icon": "githubactions" },
+          { "name": "Git", "icon": "git" },
+          { "name": "Docker", "icon": "docker", "learning": true }
+        ]
+      }
+    ]
+  }
+}
