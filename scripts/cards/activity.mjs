@@ -12,7 +12,7 @@ const PAD = 40;
 const INNER = W - 2 * PAD;
 const CHART_W = INNER - 12; // room on the right for the pulse of the current week
 
-export function activity(s, t, note = '') {
+export function activity(s, t) {
   const id = `ac-${t.name}`;
   const parts = [];
   const strong = (v) => ({ t: fmt(v), weight: 700, fill: t.ink });
@@ -23,22 +23,8 @@ export function activity(s, t, note = '') {
   const runs = [strong(s.total), plain(` ${plural(s.total, 'contribution', 'contributions')} in the last year.`)];
   parts.push(inline(runs, PAD, y, { size: 18, weight: 400 }).svg);
 
-  // Second line: a note from data/profile.json, or pull requests and reviews when the API reports them.
-  const second = [];
-  if (note) {
-    second.push(plain(note));
-  } else {
-    if (s.prs > 0) second.push(strong(s.prs), plain(` ${plural(s.prs, 'pull request', 'pull requests')} opened`));
-    if (s.reviews > 0) second.push(...(second.length ? [plain(' and ')] : []), strong(s.reviews), plain(` code ${plural(s.reviews, 'review', 'reviews')}`));
-    if (second.length) second.push(plain(' in public repositories.'));
-  }
-  if (second.length) {
-    y += 27;
-    parts.push(inline(second, PAD, y, { size: 15.5, weight: 400 }).svg);
-  }
-
   // Weekly bars
-  const top = y + 30;
+  const top = y + 34;
   const height = 122;
   const base = top + height;
   const n = s.weeks.length;
@@ -124,19 +110,27 @@ export function activity(s, t, note = '') {
 .wave{fill-opacity:.78;animation:grow .7s cubic-bezier(.2,.8,.2,1) both,wave 7s ease-in-out infinite}
 .pulse{transform-box:fill-box;transform-origin:50% 50%;animation:pulse 2.4s ease-out 1.4s infinite}
 .langs{transform-box:fill-box;transform-origin:0 50%;animation:growx 1.2s cubic-bezier(.2,.8,.2,1) .5s both}
+.g1{animation:breathe 9s ease-in-out infinite}
+.g2{animation:breathe 11s ease-in-out -4s infinite}
+@keyframes breathe{0%,100%{opacity:.55}50%{opacity:1}}
 @keyframes grow{from{transform:scaleY(0)}}
 @keyframes growx{from{transform:scaleX(0)}}
 @keyframes wave{0%,14%,100%{fill-opacity:.78}7%{fill-opacity:1}}
 @keyframes pulse{from{transform:scale(1);opacity:.9}to{transform:scale(3);opacity:0}}`;
 
-  const frame = card(t, id, W, H);
+  // Same soft blue glow as the hero card, so the two cards read as a pair.
+  const glow = `<rect class="g1" width="${W}" height="${H}" fill="url(#${id}-g1)"/><rect class="g2" width="${W}" height="${H}" fill="url(#${id}-g2)"/>`;
+  const frame = card(t, id, W, H, glow);
+  const glowDefs =
+    `<radialGradient id="${id}-g1" gradientUnits="userSpaceOnUse" cx="90" cy="-20" r="430"><stop offset="0" stop-color="${t.accent}" stop-opacity="${t.glow[0]}"/><stop offset="1" stop-color="${t.accent}" stop-opacity="0"/></radialGradient>` +
+    `<radialGradient id="${id}-g2" gradientUnits="userSpaceOnUse" cx="${W - 40}" cy="${H + 30}" r="420"><stop offset="0" stop-color="${t.accent}" stop-opacity="${t.glow[1]}"/><stop offset="1" stop-color="${t.accent}" stop-opacity="0"/></radialGradient>`;
   return svgDoc({
     width: W,
     height: H,
     title: 'GitHub activity over the last year',
-    desc: `${fmt(s.total)} contributions in the last year.${note ? ` ${note}` : ''}${langs.length ? ` Languages: ${langs.map((l) => l.name).join(', ')}.` : ''} ${stamp}.`,
+    desc: `${fmt(s.total)} contributions in the last year.${langs.length ? ` Languages: ${langs.map((l) => l.name).join(', ')}.` : ''} ${stamp}.`,
     css,
-    defs: frame.defs,
+    defs: frame.defs + glowDefs,
     body: frame.body + parts.join('\n'),
   });
 }

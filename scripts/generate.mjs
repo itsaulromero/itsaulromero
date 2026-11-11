@@ -43,7 +43,7 @@ try {
   else if (token) stats = await fetchStats(profile.login, token);
 
   if (stats) {
-    await write((t) => ({ 'activity.svg': activity(stats, t, profile.activityNote) }));
+    await write((t) => ({ 'activity.svg': activity(stats, t) }));
     console.log(`✓ activity (${stats.total} contributions)`);
   } else {
     console.warn('! No GITHUB_TOKEN: activity card skipped. The GitHub Action renders it.');

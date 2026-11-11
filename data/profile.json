@@ -5,16 +5,16 @@
   "tagline": [
     [
       {
-        "t": "Full-stack web developer.",
+        "t": "Full-stack web developer specializing in cloud.",
         "strong": true
       },
       {
-        "t": " I build Vue and Nuxt interfaces,"
+        "t": " I build Vue and Nuxt"
       }
     ],
     [
       {
-        "t": "Laravel and Node back ends, and the pipelines that ship them."
+        "t": "interfaces, Laravel and Node back ends, and ship them to AWS."
       }
     ]
   ],
@@ -27,7 +27,7 @@
     {
       "label": "Studying",
       "value": "Computer Systems Engineering",
-      "detail": "TecNM Morelia, graduating Dec 2026"
+      "detail": "Instituto Tecnológico de Morelia"
     },
     {
       "label": "Based in",
@@ -56,7 +56,6 @@
       "icon": "mail"
     }
   ],
-  "activityNote": "Most of it since August 2026, when I joined the frontend team at Alebat.",
   "stack": {
     "title": "My stack: the path of a request, and what ships it",
     "stations": [

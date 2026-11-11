@@ -9,7 +9,7 @@ GitHub GraphQL ────┘            ▲
                                 └── GitHub Actions, every day and on every push
 ```
 
-- **Change the content**: edit `data/profile.json` (name, sentence, facts, links, stack, activity note) and push. The Action re-renders the cards.
+- **Change the content**: edit `data/profile.json` (name, sentence, facts, links, stack) and push. The Action re-renders the cards.
 - **Change the look**: colors live in `scripts/lib/tokens.mjs`; each card has its own file in `scripts/cards/`.
 - **Color**: one accent (blue) for the name, the main link, the request and the bars; green only for "it works" signals (200 OK, what is live). Icons use their brand color, adjusted to read in each theme.
 - **Type**: text is converted to outlines with Mona Sans, so it looks the same on every device.

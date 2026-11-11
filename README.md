@@ -3,7 +3,7 @@
 <p>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./assets/dark/hero.svg">
-    <img src="./assets/light/hero.svg" width="100%" alt="Hey, I'm Saúl Romero. Full-stack web developer: I build Vue and Nuxt interfaces, Laravel and Node back ends, and the pipelines that ship them. Now: frontend at Alebat Education, Nuxt e-commerce, remote with Spain. Studying Computer Systems Engineering at TecNM Morelia, graduating Dec 2026. Based in Morelia, México (UTC−6).">
+    <img src="./assets/light/hero.svg" width="100%" alt="Hey, I'm Saúl Romero. Full-stack web developer specializing in cloud: I build Vue and Nuxt interfaces, Laravel and Node back ends, and ship them to AWS. Now: frontend at Alebat Education, Nuxt e-commerce, remote with Spain. Studying Computer Systems Engineering at Instituto Tecnológico de Morelia. Based in Morelia, México (UTC−6).">
   </picture>
 </p>
 

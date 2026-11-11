@@ -18,7 +18,8 @@ export const THEMES = {
     hairline: '#3d444d',
     accent: '#4c9aff',
     ok: '#3fb950',
-    onAccent: '#06162e',
+    onAccent: '#ffffff',
+    button: '#1f6feb', // deeper blue so white text passes contrast
     glow: [0.24, 0.12],
   },
   light: {
@@ -35,6 +36,7 @@ export const THEMES = {
     accent: '#0969da',
     ok: '#1a7f37',
     onAccent: '#ffffff',
+    button: '#0969da',
     glow: [0.13, 0.07],
   },
 };
