@@ -1,69 +1,156 @@
 {
-  "_comment": "Source of the whole profile. Edit this file and the 'Profile' workflow redraws every SVG and the README.",
-  "usuario": "itsaulromero",
-  "nombre": "Saúl Romero",
-  "iniciales": "SR",
-  "saludo": "hey, i'm",
-  "titular": "Full-stack Web Developer",
-  "subtitular": "Vue · Nuxt · Laravel · PostgreSQL",
-  "banner": [
-    ["trabajo", "Frontend at Alebat Education · remote, Spain"],
-    ["formacion", "Computer Systems Engineering · TecNM Morelia"],
-    ["ubicacion", "Morelia, México · UTC−6"]
+  "login": "itsaulromero",
+  "greeting": "Hey, I'm",
+  "name": "Saúl Romero",
+  "tagline": [
+    [
+      {
+        "t": "Full-stack web developer.",
+        "strong": true
+      },
+      {
+        "t": " I build Vue and Nuxt interfaces,"
+      }
+    ],
+    [
+      {
+        "t": "Laravel and Node back ends, and the pipelines that ship them."
+      }
+    ]
   ],
-  "flujo": {
-    "url": "saulromero.dev/api/projects",
-    "estado": "200 OK · shipped",
-    "pie": "one request · four layers · one developer"
-  },
-  "stack": [
+  "facts": [
     {
-      "grupo": "Frontend",
-      "nota": "what people touch",
-      "items": [
-        { "nombre": "Vue", "icono": "vuedotjs", "color": "#4FC08D" },
-        { "nombre": "Nuxt", "icono": "nuxt", "color": "#00DC82" },
-        { "nombre": "TypeScript", "icono": "typescript", "color": "#3178C6" },
-        { "nombre": "Tailwind CSS", "icono": "tailwindcss", "color": "#06B6D4" },
-        { "nombre": "Pinia", "icono": "pinia", "color": "#FFD859" },
-        { "nombre": "JavaScript", "icono": "javascript", "color": "#F7DF1E" }
-      ]
+      "label": "Now",
+      "value": "Frontend at Alebat Education",
+      "detail": "Nuxt e-commerce, remote with Spain"
     },
     {
-      "grupo": "Backend",
-      "nota": "where the rules live",
-      "items": [
-        { "nombre": "Laravel", "icono": "laravel", "color": "#FF2D20" },
-        { "nombre": "Livewire", "icono": "livewire", "color": "#FB70A9" },
-        { "nombre": "PHP", "icono": "php", "color": "#777BB4" },
-        { "nombre": "Node.js", "icono": "nodedotjs", "color": "#5FA04E" },
-        { "nombre": "Strapi", "icono": "strapi", "color": "#4945FF" }
-      ]
+      "label": "Studying",
+      "value": "Computer Systems Engineering",
+      "detail": "TecNM Morelia, graduating Dec 2026"
     },
     {
-      "grupo": "Databases",
-      "nota": "what must not get lost",
-      "items": [
-        { "nombre": "PostgreSQL", "icono": "postgresql", "color": "#4169E1" },
-        { "nombre": "MySQL", "icono": "mysql", "color": "#4479A1" },
-        { "nombre": "Supabase", "icono": "supabase", "color": "#3FCF8E" }
-      ]
-    },
-    {
-      "grupo": "Ship",
-      "nota": "how it reaches production",
-      "items": [
-        { "nombre": "Git", "icono": "git", "color": "#F05032" },
-        { "nombre": "GitHub Actions", "icono": "githubactions", "color": "#2088FF" },
-        { "nombre": "AWS S3 + CloudFront", "icono": "nube", "color": "#FF9900" },
-        { "nombre": "Docker", "icono": "docker", "color": "#2496ED", "aprendiendo": true }
-      ]
+      "label": "Based in",
+      "value": "Morelia, México",
+      "detail": "UTC−6, Central Time"
     }
   ],
-  "contacto": {
-    "web": "https://saulromero.dev",
-    "linkedin": "https://www.linkedin.com/in/sa%C3%BAl-romero-cruz-64a242236/",
-    "email": "contacto@saulromero.dev",
-    "x": "https://x.com/itsaulromero"
+  "links": [
+    {
+      "id": "portfolio",
+      "label": "saulromero.dev",
+      "href": "https://saulromero.dev",
+      "icon": "globe",
+      "primary": true
+    },
+    {
+      "id": "linkedin",
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com/in/sa%C3%BAl-romero-cruz-64a242236/",
+      "icon": "linkedin"
+    },
+    {
+      "id": "email",
+      "label": "contacto@saulromero.dev",
+      "href": "mailto:contacto@saulromero.dev",
+      "icon": "mail"
+    }
+  ],
+  "activityNote": "Most of it since August 2026, when I joined the frontend team at Alebat.",
+  "stack": {
+    "title": "My stack: the path of a request, and what ships it",
+    "stations": [
+      {
+        "name": "Frontend",
+        "note": "what people use",
+        "items": [
+          {
+            "name": "Vue",
+            "icon": "vuedotjs"
+          },
+          {
+            "name": "Nuxt",
+            "icon": "nuxt"
+          },
+          {
+            "name": "TypeScript",
+            "icon": "typescript"
+          },
+          {
+            "name": "Tailwind CSS",
+            "icon": "tailwindcss"
+          },
+          {
+            "name": "Pinia",
+            "icon": "pinia"
+          }
+        ]
+      },
+      {
+        "name": "Backend",
+        "note": "where the rules live",
+        "items": [
+          {
+            "name": "Laravel",
+            "icon": "laravel"
+          },
+          {
+            "name": "Livewire",
+            "icon": "livewire"
+          },
+          {
+            "name": "PHP",
+            "icon": "php"
+          },
+          {
+            "name": "Node.js",
+            "icon": "nodedotjs"
+          },
+          {
+            "name": "Strapi",
+            "icon": "strapi"
+          }
+        ]
+      },
+      {
+        "name": "Database",
+        "note": "what must not get lost",
+        "items": [
+          {
+            "name": "PostgreSQL",
+            "icon": "postgresql"
+          },
+          {
+            "name": "MySQL",
+            "icon": "mysql"
+          },
+          {
+            "name": "Supabase",
+            "icon": "supabase"
+          }
+        ]
+      },
+      {
+        "name": "Deploy",
+        "note": "how it reaches production",
+        "offRoute": true,
+        "live": "live",
+        "items": [
+          {
+            "name": "AWS S3 + CloudFront",
+            "icon": "cloud"
+          },
+          {
+            "name": "GitHub Actions",
+            "icon": "githubactions"
+          },
+          {
+            "name": "Docker",
+            "icon": "docker",
+            "learning": true
+          }
+        ]
+      }
+    ]
   }
 }

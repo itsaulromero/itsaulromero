@@ -1,12 +1,32 @@
-<!--
-  Every image here is an animated SVG rendered with Node from data/profile.json
-  (see scripts/). Edit that JSON, not the SVGs: the "Profile" workflow redraws
-  the cards and this README. Activity refreshes on its own every day.
--->
-<div align="center">
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg"><img src="assets/banner-light.svg" width="100%" alt="Saúl Romero. Full-stack Web Developer: Vue · Nuxt · Laravel · PostgreSQL. Frontend at Alebat Education · remote, Spain. Computer Systems Engineering · TecNM Morelia. Morelia, México · UTC−6."></picture>
-<a href="https://saulromero.dev"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/contacto-web-dark.svg"><img src="assets/contacto-web-light.svg" width="25%" alt="Portfolio: https://saulromero.dev"></picture></a><a href="https://www.linkedin.com/in/sa%C3%BAl-romero-cruz-64a242236/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/contacto-linkedin-dark.svg"><img src="assets/contacto-linkedin-light.svg" width="25%" alt="LinkedIn: https://www.linkedin.com/in/saúl-romero-cruz-64a242236/"></picture></a><a href="mailto:contacto@saulromero.dev"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/contacto-email-dark.svg"><img src="assets/contacto-email-light.svg" width="25%" alt="Email: contacto@saulromero.dev"></picture></a><a href="https://x.com/itsaulromero"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/contacto-x-dark.svg"><img src="assets/contacto-x-light.svg" width="25%" alt="X: https://x.com/itsaulromero"></picture></a>
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/stack-dark.svg"><img src="assets/stack-light.svg" width="100%" alt="My stack. Frontend: Vue, Nuxt, TypeScript, Tailwind CSS, Pinia, JavaScript. Backend: Laravel, Livewire, PHP, Node.js, Strapi. Databases: PostgreSQL, MySQL, Supabase. Ship: Git, GitHub Actions, AWS S3 + CloudFront, Docker (learning)."></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/actividad-dark.svg"><img src="assets/actividad-light.svg" width="100%" alt="My GitHub activity over the last year, including private contributions, and the languages in my public repositories."></picture>
-<br><sub>Animated SVGs rendered from <a href="data/profile.json"><code>data/profile.json</code></a> · activity refreshes every day</sub>
-</div>
+<!-- Every image here is rendered from data/profile.json by scripts/generate.mjs. Edit the JSON, not the SVGs. -->
+
+<p>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/dark/hero.svg">
+    <img src="./assets/light/hero.svg" width="100%" alt="Hey, I'm Saúl Romero. Full-stack web developer: I build Vue and Nuxt interfaces, Laravel and Node back ends, and the pipelines that ship them. Now: frontend at Alebat Education, Nuxt e-commerce, remote with Spain. Studying Computer Systems Engineering at TecNM Morelia, graduating Dec 2026. Based in Morelia, México (UTC−6).">
+  </picture>
+</p>
+
+<p>
+  <a href="https://saulromero.dev"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/dark/link-portfolio.svg"><img src="./assets/light/link-portfolio.svg" height="36" alt="Portfolio: saulromero.dev"></picture></a>
+  <a href="https://www.linkedin.com/in/sa%C3%BAl-romero-cruz-64a242236/"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/dark/link-linkedin.svg"><img src="./assets/light/link-linkedin.svg" height="36" alt="LinkedIn"></picture></a>
+  <a href="mailto:contacto@saulromero.dev"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/dark/link-email.svg"><img src="./assets/light/link-email.svg" height="36" alt="Email: contacto@saulromero.dev"></picture></a>
+</p>
+
+<br>
+
+<p>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/dark/stack.svg">
+    <img src="./assets/light/stack.svg" width="100%" alt="My stack: the path of a request, and what ships it. Frontend: Vue, Nuxt, TypeScript, Tailwind CSS, Pinia. Backend: Laravel, Livewire, PHP, Node.js, Strapi. Database: PostgreSQL, MySQL, Supabase. Deploy: AWS S3 + CloudFront, GitHub Actions, Docker (learning).">
+  </picture>
+</p>
+
+<br>
+
+<p>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/dark/activity.svg">
+    <img src="./assets/light/activity.svg" width="100%" alt="My GitHub activity over the last year: contributions per week and the languages in my public repositories. Updated every day by GitHub Actions.">
+  </picture>
+</p>

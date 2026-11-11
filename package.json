@@ -1,20 +1,15 @@
 {
   "name": "itsaulromero",
-  "version": "1.0.0",
-  "description": "Profile README rendered as code: JSON + GitHub API -> animated SVG",
   "private": true,
   "type": "module",
+  "description": "Profile README rendered as code: JSON + GitHub API -> animated SVG",
   "scripts": {
-    "fichas": "node scripts/fichas.mjs",
-    "banner": "node scripts/banner.mjs",
-    "actividad": "node scripts/actividad.mjs",
-    "readme": "node scripts/readme.mjs",
-    "todo": "node scripts/fichas.mjs && node scripts/banner.mjs && node scripts/actividad.mjs && node scripts/readme.mjs",
-    "preview": "node scripts/fichas.mjs && node scripts/banner.mjs && PREVIEW=1 node scripts/actividad.mjs && node scripts/readme.mjs"
+    "generate": "node scripts/generate.mjs"
   },
+  "engines": { "node": ">=20" },
   "dependencies": {
-    "fontkit": "^2.0.4",
-    "simple-icons": "^16.37.0",
-    "subset-font": "^2.4.0"
+    "@fontsource/mona-sans": "5.3.0",
+    "opentype.js": "2.0.0",
+    "simple-icons": "16.37.0"
   }
 }
