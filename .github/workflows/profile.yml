@@ -1,0 +1,71 @@
+# Vuelve a dibujar el perfil.
+#
+# - Cada día, para que la actividad y los lenguajes estén al día.
+# - Al cambiar data/profile.json, los scripts o los recursos, para que el
+#   cambio se vea sin tener que generar nada a mano.
+#
+# Los lenguajes salen solo de los repositorios PÚBLICOS, a propósito.
+#
+# Las contribuciones privadas (repos de Alebat) necesitan el secreto
+# PROFILE_TOKEN: un token personal con permiso "repo". Si no está, se usan los
+# recuentos guardados en data/privadas.json la última vez.
+name: Profile
+
+on:
+  schedule:
+    - cron: "17 7 * * *" # 01:17 en Ciudad de México
+  push:
+    branches: [main]
+    paths:
+      - "data/**"
+      - "scripts/**"
+      - "assets/fuentes/**"
+      - "package.json"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile
+  cancel-in-progress: false
+
+jobs:
+  dibujar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Dependencias
+        run: npm ci
+
+      - name: Tarjetas, banner y README
+        run: |
+          node scripts/fichas.mjs
+          node scripts/banner.mjs
+          node scripts/readme.mjs
+
+      - name: Actividad
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PROFILE_TOKEN: ${{ secrets.PROFILE_TOKEN }}
+        run: |
+          node scripts/actividad.mjs
+
+      - name: Guardar si ha cambiado algo
+        run: |
+          git add assets README.md data
+          if git diff --cached --quiet; then
+            echo "Nada que actualizar."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore(cards): render profile cards"
+          git push
