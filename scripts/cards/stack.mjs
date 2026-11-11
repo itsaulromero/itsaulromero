@@ -10,7 +10,7 @@ import { text, width } from '../lib/type.mjs';
 const TRACK_Y = 64;
 const NODE_X = 8; // node center, measured from the column's left edge
 const ROW = 31;
-const FIRST_ROW = 162;
+const FIRST_ROW = 141;
 const LOOP = 8; // seconds
 
 export function stack(p, t) {
@@ -82,7 +82,6 @@ export function stack(p, t) {
       return (
         marker +
         text(s.name, x, 106, { size: 19, weight: 700, fill: t.ink }) +
-        text(s.note, x, 127, { size: 13.5, weight: 400, fill: t.muted }) +
         items
       );
     })
@@ -150,7 +149,7 @@ ${request}`;
     width: W,
     height: H,
     title: 'Stack',
-    desc: `${p.stack.title}. ${stations.map((s) => `${s.name} (${s.note}): ${s.items.map((it) => it.name + (it.learning ? ' (learning)' : '')).join(', ')}`).join('. ')}.`,
+    desc: `${p.stack.title}. ${stations.map((s) => `${s.name}: ${s.items.map((it) => it.name + (it.learning ? ' (learning)' : '')).join(', ')}`).join('. ')}.`,
     css,
     defs,
     body,

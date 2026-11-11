@@ -46,7 +46,7 @@
     {
       "id": "linkedin",
       "label": "LinkedIn",
-      "href": "https://www.linkedin.com/in/sa%C3%BAl-romero-cruz-64a242236/",
+      "href": "https://www.linkedin.com/in/saul-romero-cruz-64a242236/",
       "icon": "linkedin"
     },
     {
@@ -62,7 +62,6 @@
     "stations": [
       {
         "name": "Frontend",
-        "note": "what people use",
         "items": [
           {
             "name": "Vue",
@@ -71,6 +70,10 @@
           {
             "name": "Nuxt",
             "icon": "nuxt"
+          },
+          {
+            "name": "JavaScript",
+            "icon": "javascript"
           },
           {
             "name": "TypeScript",
@@ -88,7 +91,6 @@
       },
       {
         "name": "Backend",
-        "note": "where the rules live",
         "items": [
           {
             "name": "Laravel",
@@ -114,7 +116,6 @@
       },
       {
         "name": "Database",
-        "note": "what must not get lost",
         "items": [
           {
             "name": "PostgreSQL",
@@ -132,7 +133,6 @@
       },
       {
         "name": "Deploy",
-        "note": "how it reaches production",
         "offRoute": true,
         "live": "live",
         "items": [
