@@ -30,3 +30,17 @@
     <img src="./assets/light/activity.svg" width="100%" alt="My GitHub activity over the last year: contributions per week and the languages in my public repositories. Updated every day by GitHub Actions.">
   </picture>
 </p>
+
+---
+
+### In plain text
+
+**Saúl Romero** · Full-stack web developer specializing in cloud · Morelia, México (UTC−6)
+
+- **Now:** Frontend at Alebat Education — Nuxt e-commerce, remote with Spain
+- **Studying:** Computer Systems Engineering, Instituto Tecnológico de Morelia
+- **Frontend:** Vue · Nuxt · JavaScript · TypeScript · Tailwind CSS · Pinia
+- **Backend:** Laravel · Livewire · PHP · Node.js · Strapi
+- **Database:** PostgreSQL · MySQL · Supabase
+- **Deploy:** AWS S3 + CloudFront · GitHub Actions · Docker (learning)
+- **Contact:** [saulromero.dev](https://saulromero.dev) · [LinkedIn](https://www.linkedin.com/in/saul-romero-cruz-64a242236/) · [contacto@saulromero.dev](mailto:contacto@saulromero.dev)
