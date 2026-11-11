@@ -3,7 +3,7 @@
 <p>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./assets/dark/hero.svg">
-    <img src="./assets/light/hero.svg" width="100%" alt="Hey, I'm Saúl Romero. Full-stack web developer specializing in cloud: I build Vue and Nuxt interfaces, Laravel and Node back ends, and ship them to AWS. Now: frontend at Alebat Education, Nuxt e-commerce, remote with Spain. Studying Computer Systems Engineering at Instituto Tecnológico de Morelia. Based in Morelia, México (UTC−6).">
+    <img src="./assets/light/hero.svg" width="100%" alt="Hey, I'm Saúl Romero. Full-stack web developer with a focus on cloud technologies: I build Vue and Nuxt interfaces, Laravel and Node back ends, and ship them to AWS. Now: Frontend Developer at Alebat Education (professional residency), Nuxt e-commerce, remote collaboration with Spain. Studying Computer Systems Engineering at Instituto Tecnológico de Morelia. Based in Morelia, México (UTC−6).">
   </picture>
 </p>
 
@@ -35,12 +35,13 @@
 
 ### In plain text
 
-**Saúl Romero** · Full-stack web developer specializing in cloud · Morelia, México (UTC−6)
+**Saúl Romero** · Full-stack web developer with a focus on cloud technologies · Morelia, México (UTC−6)
 
-- **Now:** Frontend at Alebat Education — Nuxt e-commerce, remote with Spain
+- **Now:** Frontend Developer at Alebat Education · Professional Residency · Nuxt e-commerce · Remote collaboration with Spain
 - **Studying:** Computer Systems Engineering, Instituto Tecnológico de Morelia
 - **Frontend:** Vue · Nuxt · JavaScript · TypeScript · Tailwind CSS · Pinia
 - **Backend:** Laravel · Livewire · PHP · Node.js · Strapi
 - **Database:** PostgreSQL · MySQL · Supabase
 - **Deploy:** AWS S3 + CloudFront · GitHub Actions · Docker (learning)
+- **AI workflow:** Claude Code · Codex
 - **Contact:** [saulromero.dev](https://saulromero.dev) · [LinkedIn](https://www.linkedin.com/in/saul-romero-cruz-64a242236/) · [contacto@saulromero.dev](mailto:contacto@saulromero.dev)

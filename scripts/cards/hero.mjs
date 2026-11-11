@@ -11,7 +11,7 @@ const PAD = 40;
 const GREETING = { size: 22, weight: 500 };
 const NAME = { size: 96, weight: 800, tracking: -0.03 };
 const TAGLINE = { size: 21, weight: 400 };
-const COLS = [PAD, 320, 615];
+const COLS = [PAD, 385, 655];
 
 // Orbit: center just above the top-right corner, so only the lower arcs show.
 const ORBIT = { cx: 772, cy: 4, rings: [58, 103, 148], count: [3, 5, 6], seconds: [46, 64, 84] };
