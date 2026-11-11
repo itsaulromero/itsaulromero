@@ -1,14 +1,14 @@
-// Activity card: one sentence with the numbers, a year of weekly bars and the languages.
+// Activity: one sentence with the numbers, a year of weekly bars and the languages.
 // Bars use the accent. The current week is green and pulses (it is live),
 // and a soft wave runs through the bars every few seconds.
 import { WIDTH as W } from '../lib/tokens.mjs';
-import { svgDoc, card } from '../lib/draw.mjs';
+import { svgDoc } from '../lib/draw.mjs';
 import { text, inline, width } from '../lib/type.mjs';
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const fmt = (n) => Number(n).toLocaleString('en-US');
 const plural = (n, one, many) => (n === 1 ? one : many);
-const PAD = 40;
+const PAD = 0; // no card: it sits on GitHub's own background, aligned with the stack
 const INNER = W - 2 * PAD;
 const CHART_W = INNER - 12; // room on the right for the pulse of the current week
 
@@ -19,7 +19,7 @@ export function activity(s, t) {
   const plain = (str) => ({ t: str, fill: t.muted });
 
   // Sentence
-  let y = 58;
+  let y = 22;
   const runs = [strong(s.total), plain(` ${plural(s.total, 'contribution', 'contributions')} in the last year.`)];
   parts.push(inline(runs, PAD, y, { size: 18, weight: 400 }).svg);
 
@@ -103,34 +103,25 @@ export function activity(s, t) {
   } else {
     parts.push(text(stamp, W - PAD, y, { size: 13.5, weight: 400, fill: t.faint, anchor: 'end' }));
   }
-  const H = y + 34;
+  const H = y + 8;
 
   const css = `
 .bar{transform-box:fill-box;transform-origin:50% 100%;animation:grow .7s cubic-bezier(.2,.8,.2,1) both}
 .wave{fill-opacity:.78;animation:grow .7s cubic-bezier(.2,.8,.2,1) both,wave 7s ease-in-out infinite}
 .pulse{transform-box:fill-box;transform-origin:50% 50%;animation:pulse 2.4s ease-out 1.4s infinite}
 .langs{transform-box:fill-box;transform-origin:0 50%;animation:growx 1.2s cubic-bezier(.2,.8,.2,1) .5s both}
-.g1{animation:breathe 9s ease-in-out infinite}
-.g2{animation:breathe 11s ease-in-out -4s infinite}
-@keyframes breathe{0%,100%{opacity:.55}50%{opacity:1}}
 @keyframes grow{from{transform:scaleY(0)}}
 @keyframes growx{from{transform:scaleX(0)}}
 @keyframes wave{0%,14%,100%{fill-opacity:.78}7%{fill-opacity:1}}
 @keyframes pulse{from{transform:scale(1);opacity:.9}to{transform:scale(3);opacity:0}}`;
 
-  // Same soft blue glow as the hero card, so the two cards read as a pair.
-  const glow = `<rect class="g1" width="${W}" height="${H}" fill="url(#${id}-g1)"/><rect class="g2" width="${W}" height="${H}" fill="url(#${id}-g2)"/>`;
-  const frame = card(t, id, W, H, glow);
-  const glowDefs =
-    `<radialGradient id="${id}-g1" gradientUnits="userSpaceOnUse" cx="90" cy="-20" r="430"><stop offset="0" stop-color="${t.accent}" stop-opacity="${t.glow[0]}"/><stop offset="1" stop-color="${t.accent}" stop-opacity="0"/></radialGradient>` +
-    `<radialGradient id="${id}-g2" gradientUnits="userSpaceOnUse" cx="${W - 40}" cy="${H + 30}" r="420"><stop offset="0" stop-color="${t.accent}" stop-opacity="${t.glow[1]}"/><stop offset="1" stop-color="${t.accent}" stop-opacity="0"/></radialGradient>`;
   return svgDoc({
     width: W,
     height: H,
     title: 'GitHub activity over the last year',
     desc: `${fmt(s.total)} contributions in the last year.${langs.length ? ` Languages: ${langs.map((l) => l.name).join(', ')}.` : ''} ${stamp}.`,
     css,
-    defs: frame.defs + glowDefs,
-    body: frame.body + parts.join('\n'),
+    defs: '',
+    body: parts.join('\n'),
   });
 }
