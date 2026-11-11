@@ -69,6 +69,9 @@ const CUSTOM = {
   globe: {
     line: '<circle cx="12" cy="12" r="9.2"/><ellipse cx="12" cy="12" rx="4" ry="9.2"/><path d="M2.8 12h18.4"/>',
   },
+  terminal: {
+    line: '<rect x="2.8" y="4" width="18.4" height="16" rx="2.6"/><path d="m7 9.5 3 2.5-3 2.5M12.5 15h4.5"/>',
+  },
   mail: {
     line: '<rect x="2.8" y="5" width="18.4" height="14" rx="2.6"/><path d="m3.6 7 8.4 6.4L20.4 7"/>',
   },

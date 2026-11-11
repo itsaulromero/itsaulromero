@@ -24,7 +24,11 @@ export function stack(p, t) {
   const last = node(route.at(-1));
   const span = last - first;
   const rows = Math.max(...stations.map((s) => s.items.length));
-  const H = FIRST_ROW + (rows - 1) * ROW + 14;
+  const listEnd = FIRST_ROW + (rows - 1) * ROW + 14;
+  // AI tools I work with: a quiet row under the columns, not a station on the route.
+  const tools = p.stack.tools;
+  const TOOLS_Y = listEnd + 44;
+  const H = tools ? TOOLS_Y + 12 : listEnd;
 
   // Timeline, in % of the loop. The request rests at route station i until stops[i].
   const stops = route.map((_, i) => 8 + i * 22); // 8, 30, 52
@@ -137,19 +141,33 @@ ${kf.join('\n')}`;
 <radialGradient id="${id}-glow"><stop offset="0" stop-color="${t.accent}" stop-opacity=".5"/><stop offset="1" stop-color="${t.accent}" stop-opacity="0"/></radialGradient>
 <radialGradient id="${id}-okglow"><stop offset="0" stop-color="${t.ok}" stop-opacity=".5"/><stop offset="1" stop-color="${t.ok}" stop-opacity="0"/></radialGradient>`;
 
+  let toolsRow = '';
+  if (tools) {
+    const lab = { size: 14, weight: 500 };
+    const nm = { size: 15.5, weight: 500 };
+    let tx = width(tools.label, lab) + 22;
+    toolsRow = `<line x1="0" y1="${TOOLS_Y - 30.5}" x2="${W}" y2="${TOOLS_Y - 30.5}" stroke="${t.hairline}"/>` + text(tools.label, 0, TOOLS_Y, { ...lab, fill: t.muted });
+    for (const it of tools.items) {
+      const c = it.icon === 'terminal' ? t.ink : brandColor(it.icon, t);
+      toolsRow += icon(it.icon, tx, TOOLS_Y - 13.5, 17, c) + text(it.name, tx + 27, TOOLS_Y, { ...nm, fill: t.body });
+      tx += 27 + width(it.name, nm) + 30;
+    }
+  }
+
   const body = `
 ${text(p.stack.title, 0, 20, { size: 15, weight: 500, fill: t.muted })}
 ${track}
 ${trails}
 ${columns}
 ${response}
-${request}`;
+${request}
+${toolsRow}`;
 
   return svgDoc({
     width: W,
     height: H,
     title: 'Stack',
-    desc: `${p.stack.title}. ${stations.map((s) => `${s.name}: ${s.items.map((it) => it.name + (it.learning ? ' (learning)' : '')).join(', ')}`).join('. ')}.`,
+    desc: `${p.stack.title}. ${stations.map((s) => `${s.name}: ${s.items.map((it) => it.name + (it.learning ? ' (learning)' : '')).join(', ')}`).join('. ')}.${tools ? ` ${tools.label}: ${tools.items.map((it) => it.name).join(', ')}.` : ''}`,
     css,
     defs,
     body,

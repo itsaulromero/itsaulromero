@@ -18,7 +18,7 @@
 <p>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./assets/dark/stack.svg">
-    <img src="./assets/light/stack.svg" width="100%" alt="My stack: the path of a request, and what ships it. Frontend: Vue, Nuxt, JavaScript, TypeScript, Tailwind CSS, Pinia. Backend: Laravel, Livewire, PHP, Node.js, Strapi. Database: PostgreSQL, MySQL, Supabase. Deploy: AWS S3 + CloudFront, GitHub Actions, Docker (learning).">
+    <img src="./assets/light/stack.svg" width="100%" alt="My stack: the path of a request, and what ships it. Frontend: Vue, Nuxt, JavaScript, TypeScript, Tailwind CSS, Pinia. Backend: Laravel, Livewire, PHP, Node.js, Strapi. Database: PostgreSQL, MySQL, Supabase. Deploy: AWS S3 + CloudFront, GitHub Actions, Docker (learning). AI workflow: Claude Code, Codex.">
   </picture>
 </p>
 

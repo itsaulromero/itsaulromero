@@ -150,6 +150,19 @@
           }
         ]
       }
-    ]
+    ],
+    "tools": {
+      "label": "AI workflow",
+      "items": [
+        {
+          "name": "Claude Code",
+          "icon": "claudecode"
+        },
+        {
+          "name": "Codex",
+          "icon": "terminal"
+        }
+      ]
+    }
   }
 }
